@@ -1,14 +1,14 @@
 Repository for reproducing the https://github.com/elm-lang/elm-make/issues/107 bug.
 
 Steps to reproduce:
-* Clone the repository
 * `elm-make Test.elm` - This will compile fine
+  
   ```
   Success! Compiled 4 modules.
   Successfully generated index.html
   ```
 * Change `Lib.elm` from `type Msg = A` to `type Msg = B`
-* `elm-make Test.elm` - This will throw the following error:
+* `elm-make Test.elm` - This will throw the following 2 errors:
   ```
   -- NAMING ERROR ---------------------------------------------------- ././Bar.elm
 
@@ -37,6 +37,7 @@ Steps to reproduce:
 * Fix the problem in `Bar.elm` by changing `x = Lib.A` to `x = Lib.C`
 * `elm-make Test.elm` - This will compile fine but the error in `Foo.elm` is not
   fixed and because of this it will throw a **runtime error**.
+  
   ```
   Success! Compiled 2 modules.
   Successfully generated index.html
