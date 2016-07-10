@@ -34,7 +34,7 @@ Steps to reproduce:
 
   Detected errors in 2 modules.
   ```
-* Fix the problem in `Bar.elm` by changing `x = Lib.A` to `x = Lib.C`
+* Fix the problem in `Bar.elm` by changing `x = Lib.A` to `x = Lib.B`
 * `elm-make Test.elm` - This will compile fine but the error in `Foo.elm` is not
   fixed and because of this it will throw a **runtime error**.
   
